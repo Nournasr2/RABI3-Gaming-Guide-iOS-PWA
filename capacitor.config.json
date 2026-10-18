@@ -1,0 +1,8 @@
+{
+  "appId": "com.rabi3.gamingguide",
+  "appName": "RABI3 Gaming Guide",
+  "webDir": "web",
+  "server": {
+    "iosScheme": "https"
+  }
+}

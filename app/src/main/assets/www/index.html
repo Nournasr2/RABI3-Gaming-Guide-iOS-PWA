@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b1738">
+  <meta name="description" content="دليل عملاء شركة الربيع لأجهزة الألعاب: إرشادات PlayStation وتشخيص الأعطال وطلبات الصيانة.">
+  <title>RABI3 Gaming Guide | دليل الربيع</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --navy:#10265d;
+      --navy2:#172f6c;
+      --panel:#1c2d54;
+      --orange:#f27621;
+      --orange2:#ff9a4d;
+      --text:#f7f8fc;
+      --muted:#b9c4dc;
+      --line:rgba(255,255,255,.12);
+      --bg:#091329;
+    }
+    body {
+      background:
+        radial-gradient(ellipse at 82% 8%, rgba(242,118,33,.10), transparent 30%),
+        radial-gradient(ellipse at 5% 35%, rgba(42,79,160,.16), transparent 35%),
+        var(--bg);
+    }
+    .topbar {
+      background:rgba(8,19,43,.94);
+      border-bottom-color:rgba(242,118,33,.24);
+      box-shadow:0 8px 30px rgba(0,0,0,.16);
+    }
+    .brand { gap:11px; }
+    .brand-logo {
+      width:52px;height:52px;object-fit:contain;border-radius:50%;
+      background:#fff;border:2px solid rgba(242,118,33,.65);
+      box-shadow:0 0 0 4px rgba(242,118,33,.09);
+      flex-shrink:0;
+    }
+    .brand strong { letter-spacing:1.5px; }
+    .brand small { color:#ff9a4d; }
+    .hero { position:relative; }
+    .hero:after {
+      content:"";position:absolute;inset:18px 5% auto auto;width:160px;height:160px;
+      border:1px solid rgba(242,118,33,.10);border-radius:50%;pointer-events:none;
+    }
+    .hero h1 em { color:#ff8a3d; }
+    .hero-art {
+      height:auto;min-height:360px;display:grid;place-items:center;
+      position:relative;transform:none!important;
+    }
+    .hero-art:before {
+      width:min(82%,360px);height:auto;aspect-ratio:1;border-radius:50%;
+      background:radial-gradient(circle,rgba(242,118,33,.18),rgba(26,53,112,.20) 55%,transparent 72%);
+      filter:none;
+    }
+    .orbit-one { width:min(100%,440px);height:210px;border-color:rgba(242,118,33,.32); }
+    .orbit-two { width:min(90%,370px);height:290px;border-color:rgba(125,158,231,.24); }
+    .hero-logo-wrap {
+      position:relative;z-index:1;width:min(74%,330px);aspect-ratio:1;
+      padding:9px;border-radius:50%;background:linear-gradient(145deg,#fff,#e9edf5);
+      border:3px solid #f27621;box-shadow:0 25px 65px rgba(0,0,0,.4),0 0 0 9px rgba(242,118,33,.08);
+      overflow:hidden;
+    }
+    .hero-logo-wrap img { width:100%;height:100%;display:block;object-fit:contain;border-radius:50%; }
+    .floating-tag { background:#132752;border-color:rgba(242,118,33,.30); }
+    .tag-top { top:22px;right:0; }
+    .tag-bottom { bottom:20px;left:0; }
+    .quick-stats { background:#0e1c3b;border-color:rgba(242,118,33,.18); }
+    .problem-card:hover,.problem-card.active { border-color:rgba(242,118,33,.85); }
+    .diagnostic-result,.branch-card,.guide-card,.request-form {
+      box-shadow:0 14px 36px rgba(0,0,0,.12);
+    }
+    .branch-card.featured {
+      border-color:rgba(242,118,33,.65);
+      box-shadow:inset 0 0 0 1px rgba(242,118,33,.08),0 15px 36px rgba(0,0,0,.14);
+    }
+    .footer { background:#081127; }
+    .footer-brand { gap:12px; }
+    .footer-brand .brand-logo { width:45px;height:45px; }
+    @media(max-width:650px) {
+      .brand-logo { width:44px;height:44px; }
+      .hero-art { min-height:270px; }
+      .hero-logo-wrap { width:min(68%,260px); }
+      .hero-art .tag-top { right:2px;top:10px; }
+      .hero-art .tag-bottom { left:2px;bottom:8px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="الرئيسية">
+      <img class="brand-logo" src="assets/rabi3-logo.png" alt="شعار شركة الربيع لأجهزة الألعاب">
+      <div><strong>RABI3</strong><small>GAMING GUIDE</small></div>
+    </a>
+    <nav class="desktop-nav" aria-label="القائمة الرئيسية">
+      <a href="#guides">الإرشادات</a><a href="#diagnose">تشخيص الأعطال</a><a href="#branches">الفروع والخدمات</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+  </header>
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="pulse"></span> شركة الربيع لأجهزة الألعاب · منذ 1997</span>
+        <h1>خبرة سنين بتفرق.<br><em>كل الدعم في مكان واحد.</em></h1>
+        <p>دليل عملاء شركة الربيع: إرشادات واضحة، خطوات تشخيص أولية، وطريق أسهل للوصول لخدمات أجهزة PlayStation والصيانة.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#diagnose">شخّص العطل <span>←</span></a>
+          <a class="btn btn-secondary" href="#guides">تصفّح الإرشادات</a>
+        </div>
+        <div class="trust-row"><span>● PS4</span><span>● PS5</span><span>● أذرع التحكم</span></div>
+      </div>
+      <div class="hero-art" aria-label="شعار شركة الربيع الرسمي">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-logo-wrap"><img src="assets/rabi3-logo.png" alt="اللوجو الرسمي لشركة الربيع"></div>
+        <div class="floating-tag tag-top">RABI3 <b>CARE</b></div>
+        <div class="floating-tag tag-bottom"><span class="tag-dot"></span> خبرة سنين بتفرق</div>
+      </div>
+    </section>
+    <section class="quick-stats">
+      <div><strong>01</strong><span>افهم المشكلة</span></div><div><strong>02</strong><span>جرّب خطوات آمنة</span></div><div><strong>03</strong><span>اطلب المساعدة</span></div>
+    </section>
+    <section class="section" id="diagnose">
+      <div class="section-heading">
+        <div><span class="eyebrow">مساعد الأعطال</span><h2>إيه اللي بيحصل مع جهازك؟</h2><p>اختار المشكلة، وهندلّك على خطوات أولية آمنة.</p></div>
+        <span class="section-index">01 / DIAGNOSE</span>
+      </div>
+      <div class="diagnostic-layout">
+        <div class="diagnostic-options" id="diagnosticOptions">
+          <button class="problem-card active" data-problem="power"><span class="problem-icon">⏻</span><span><b>الجهاز مش بيفتح</b><small>لا توجد إضاءة أو استجابة</small></span><span class="chevron">←</span></button>
+          <button class="problem-card" data-problem="display"><span class="problem-icon">▣</span><span><b>مفيش صورة على الشاشة</b><small>الشاشة سوداء أو لا توجد إشارة</small></span><span class="chevron">←</span></button>
+          <button class="problem-card" data-problem="controller"><span class="problem-icon">⌁</span><span><b>الذراع مش بتتصل</b><small>مشكلة اتصال أو استجابة</small></span><span class="chevron">←</span></button>
+          <button class="problem-card" data-problem="heat"><span class="problem-icon">♨</span><span><b>حرارة أو صوت مروحة</b><small>سخونة أو صوت أعلى من المعتاد</small></span><span class="chevron">←</span></button>
+          <button class="problem-card" data-problem="storage"><span class="problem-icon">▤</span><span><b>مساحة التخزين ممتلئة</b><small>مش قادر تثبت لعبة أو تحديث</small></span><span class="chevron">←</span></button>
+        </div>
+        <article class="diagnostic-result" id="diagnosticResult" aria-live="polite"></article>
+      </div>
+      <p class="safety-note"><b>تنبيه سلامة:</b> افصل الجهاز عن الكهرباء قبل تحريك الكابلات. لا تفتح مزوّد الطاقة أو الجهاز من الداخل؛ الأعطال الداخلية تحتاج فنيًا مؤهلًا.</p>
+    </section>
+    <section class="section guides-section" id="guides">
+      <div class="section-heading">
+        <div><span class="eyebrow">مكتبة المعرفة</span><h2>إرشادات تساعدك كل يوم</h2><p>محتوى مختصر وسهل البحث، ويمكن تطويره لاحقًا.</p></div>
+        <span class="section-index">02 / GUIDES</span>
+      </div>
+      <div class="guide-toolbar"><label class="search-box"><span>⌕</span><input id="guideSearch" type="search" placeholder="ابحث عن مشكلة أو إرشاد..." aria-label="البحث في الإرشادات"></label><div class="filter-pills" id="guideFilters"><button class="filter-pill active" data-category="all">الكل</button><button class="filter-pill" data-category="console">الأجهزة</button><button class="filter-pill" data-category="controller">الأذرع</button><button class="filter-pill" data-category="games">الألعاب</button></div></div>
+      <div class="guide-grid" id="guideGrid"></div>
+      <div class="empty-state hidden" id="guideEmpty">مفيش نتائج مطابقة. جرّب كلمة تانية.</div>
+    </section>
+    <section class="service-banner section">
+      <div class="banner-icon">✦</div><div><span class="eyebrow">محتاج مساعدة من متخصص؟</span><h2>خلي الخطوة الجاية مع فريق الربيع.</h2><p>جهّز تفاصيل جهازك والعطل، واختار الفرع المناسب لطلب الصيانة.</p></div><a href="#request" class="btn btn-primary">طلب صيانة <span>←</span></a>
+    </section>
+    <section class="section branch-section" id="branches">
+      <div class="section-heading"><div><span class="eyebrow">قريبين منك</span><h2>فروع وخدمات الربيع</h2><p>اختار الفرع الذي تريد الاستفسار عنه. أضف العناوين ومواعيد العمل الرسمية قبل النشر.</p></div><span class="section-index">03 / BRANCHES</span></div>
+      <div class="branch-grid">
+        <article class="branch-card"><div class="branch-number">01</div><span class="branch-label">ALEXANDRIA</span><h3>فرع سموحة</h3><p>بيع وشراء واستبدال وصيانة أجهزة الألعاب والأذرع.</p><a href="#request" class="text-link" data-branch-link="سموحة">اسأل عن الخدمة <span>←</span></a></article>
+        <article class="branch-card featured"><div class="branch-number">02</div><span class="branch-label">ALEXANDRIA</span><h3>فرع سان ستيفانو</h3><p>خدمات أجهزة PlayStation وإرشادات ما بعد الشراء.</p><a href="#request" class="text-link" data-branch-link="سان ستيفانو">اسأل عن الخدمة <span>←</span></a></article>
+        <article class="branch-card"><div class="branch-number">03</div><span class="branch-label">ALEXANDRIA</span><h3>فرع ميامي</h3><p>استفسارات الأجهزة والأذرع وطلبات الصيانة.</p><a href="#request" class="text-link" data-branch-link="ميامي">اسأل عن الخدمة <span>←</span></a></article>
+      </div>
+    </section>
+    <section class="section request-section" id="request">
+      <div class="request-intro"><span class="eyebrow">طلب صيانة</span><h2>احكيلنا عن المشكلة.</h2><p>املأ البيانات لتجهيز ملخص للطلب. في هذه النسخة التجريبية، الطلب لا يُرسل إلى الشركة تلقائيًا.</p><div class="request-promise"><span>✓</span> تفاصيل منظمة للفني<br><span>✓</span> خطوات التشخيص التي جرّبتها</div></div>
+      <form class="request-form" id="serviceForm">
+        <div class="form-row"><label>الاسم<input name="name" required maxlength="80" placeholder="اسم العميل"></label><label>رقم الهاتف<input name="phone" required inputmode="tel" maxlength="25" placeholder="رقم للتواصل"></label></div>
+        <div class="form-row"><label>الجهاز<select name="device" required><option value="">اختار الجهاز</option><option>PS5</option><option>PS4 Pro</option><option>PS4 Slim</option><option>PS4</option><option>ذراع DualSense</option><option>ذراع DualShock 4</option><option>أخرى</option></select></label><label>الفرع المفضل<select name="branch" required><option value="">اختار الفرع</option><option>سموحة</option><option>سان ستيفانو</option><option>ميامي</option></select></label></div>
+        <label>وصف المشكلة<textarea name="issue" required maxlength="1000" rows="4" placeholder="إيه اللي بيحصل؟ وبدأت المشكلة إمتى؟"></textarea></label>
+        <label class="consent"><input type="checkbox" required> أوافق على استخدام البيانات دي لتجهيز طلب الصيانة في هذه النسخة التجريبية.</label>
+        <button class="btn btn-primary form-submit" type="submit">تجهيز ملخص الطلب <span>←</span></button>
+        <p class="form-message" id="formMessage" role="status"></p>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-brand"><img class="brand-logo" src="assets/rabi3-logo.png" alt="شعار شركة الربيع"><div><strong>شركة الربيع لأجهزة الألعاب</strong><small>خبرة سنين بتفرق · منذ 1997</small></div></div>
+    <p>دليل إرشادي للعملاء. المعلومات لا تغني عن فحص فني عند وجود عطل داخلي.</p>
+    <span class="copyright">RABI3 GAMING GUIDE · MVP</span>
+  </footer>
+  <dialog id="guideDialog" class="guide-dialog"><button class="dialog-close" id="dialogClose" aria-label="إغلاق">×</button><div id="guideDialogContent"></div></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
